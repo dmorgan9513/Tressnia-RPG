@@ -1,4 +1,4 @@
-package main;
+package chapter1;
 
 import java.util.HashMap;
 import java.util.Map;
@@ -15,7 +15,7 @@ public class CenterDialogue {
         centerAme.put("Welcome", "AME: Welcome to Tressnia.  This is an amazing place full of beauty and adventure, even if you can't tell right now.\n" +
                 "I know this is all a little confusing, but as you progress, it will start to become clear, and I'll be here to help you find your way.\n");
         centerAme.put("stones", "\nAME: You may have noticed a few circles of stones surrounding you.  These are your first challenges.\n" +
-                "These challenges will test your mind and ability to solve puzzles.  Step into one of the circles to begin\n");
+                "These challenges will test your mind and ability to solve puzzles.  Step into one of the circles to begin.\n");
 
         return centerAme.get(key);
     }
@@ -25,7 +25,7 @@ public class CenterDialogue {
         centerPlayer.put("observeChoice","** You observe your surroundings. It's dark as if the sun has just set.  The air is cool with a light breeze.\n " +
                 "In front of you is Ame and to each side and behind you are stones shaped together in perfect circles.\n" +
                 " There's a feeling of emptiness as you look past them into the distance. You wonder how you got here. **\n");
-        centerPlayer.put("stoneChoice","\n--What would you like to do? (type \"left\", \"right\", or \"behind\" to step into one of the circles)");
+        centerPlayer.put("stoneChoice","\n--What would you like to do? (type \"left\", \"right\", or \"behind\" to step into one of the circles)\n");
 
         return centerPlayer.get(key);
     }
