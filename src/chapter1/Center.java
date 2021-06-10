@@ -15,7 +15,7 @@ public class Center extends Location implements Locationable {
     private boolean talkedWithAmy = false;
     private boolean observed = false;
     private Locationable nextLocation;
-    private final Map<String, String> dialogue = readDialogueFile(new File("src/main/CenterDialogue.txt"));
+    private final Map<String, String> dialogue = readDialogueFile(new File("src/chapter1/CenterDialogue.txt"));
 
     @Override
     public Locationable getLocation() {
@@ -33,7 +33,7 @@ public class Center extends Location implements Locationable {
         this.username = input.nextLine();
 
         delay("Welcome " + username + ".\n" + dialogue.get("A2"));
-        halt(2);
+        halt(1);
         delay(dialogue.get("G1"));
         delay(dialogue.get("G2"));
 
@@ -47,9 +47,13 @@ public class Center extends Location implements Locationable {
                     delay(dialogue.get("G2"));
                 }
             } else if (userInput.equalsIgnoreCase("ame")) {
-                delay(dialogue.get("A3"));
-                halt(2);
-                talkedWithAmy = true;
+                if(talkedWithAmy) {
+                    delay(dialogue.get("A5"));
+                } else {
+                    delay(dialogue.get("A3"));
+                    halt(2);
+                    talkedWithAmy = true;
+                }
                 if(!observed) {
                     delay(dialogue.get("G2"));
                 }
