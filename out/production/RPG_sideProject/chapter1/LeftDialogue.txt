@@ -1,4 +1,0 @@
-G1|** You step into the circle of stones to your left and look back to notice Ame giving an approving nod.@You feel a strong breeze of air surround you as you close your eyes.  You open your eyes and the emptiness and desolation is gone and you're in what looks like a library.@All of the walls are lined with bookshelves full of books and an odd looking man in a strange blue party hat stands in front of you. **@
-G2|@--What would you like to do? (type "1" to ask who the man is or "2" to ask what you're supposed to do here)@
-W1|@Wise Old Man: My name is not important, but the knowledge that I hold is what you should seek.@
-W2|@Wise Old Man: Sometimes things are not always as they seem.  I will present you with some anagrams you need to unscramble.@You'll need to find the solution to 3 anagrams to proceed.  You'll have 3 attempts at each anagram before you'll be given a fresh one. Good luck!@

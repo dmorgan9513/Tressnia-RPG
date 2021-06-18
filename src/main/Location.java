@@ -31,6 +31,20 @@ public abstract class Location implements Locationable{
         }
     }
 
+    public void next() {
+        String continuePrompt = "Press Enter to continue or type \"Options\" to see current options. ";
+        delay(continuePrompt);
+        Scanner scanner = new Scanner(System.in);
+        String input = scanner.nextLine();
+        while(!input.equals("")) {
+            if (input.equalsIgnoreCase("options") || input.equalsIgnoreCase("quit")) {
+                delay(getAltOptions(input));
+
+            }
+            next();
+        }
+    }
+
     public static Map<String, String> readDialogueFile(File filePath) {
         Map<String, String> dialogueMap = new HashMap<>();
         try {
