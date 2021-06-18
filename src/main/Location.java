@@ -2,11 +2,11 @@ package main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
 public abstract class Location implements Locationable{
+
+    List<String> options = new ArrayList<>(Arrays.asList("Options", "Quit"));
 
     public void delay (String s) {
         for (int i = 0; i < s.length(); i++) {
@@ -46,5 +46,25 @@ public abstract class Location implements Locationable{
             System.exit(1);
         }
         return null;
+    }
+
+    public String getAltOptions(String input) {
+        if(input.equalsIgnoreCase("quit")) {
+            System.out.println("Thanks for playing!");
+            System.exit(1);
+        } else if(input.equalsIgnoreCase("options")) {
+            String optionList = "";
+            for(String option : options) {
+                optionList += option + " ";
+            }
+            return "Your current options are: " + optionList + "@";
+        }
+        return "Error: Invalid Input, type \"menu\" to try again";
+    }
+
+    public void addOption(String newOption) {
+        if(!options.contains(newOption)) {
+            options.add(newOption);
+        }
     }
 }

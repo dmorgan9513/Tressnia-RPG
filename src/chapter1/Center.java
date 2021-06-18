@@ -3,8 +3,6 @@ package chapter1;
 import main.*;
 
 import java.io.File;
-import java.io.FileNotFoundException;
-import java.util.HashMap;
 import java.util.Map;
 import java.util.Scanner;
 
@@ -35,6 +33,9 @@ public class Center extends Location implements Locationable {
         delay("Welcome " + username + ".\n" + dialogue.get("A2"));
         halt(1);
         delay(dialogue.get("G1"));
+        halt(2);
+        delay(dialogue.get("G5"));
+        halt(2);
         delay(dialogue.get("G2"));
 
         while(!talkedWithAmy || !observed) {
@@ -57,7 +58,12 @@ public class Center extends Location implements Locationable {
                 if(!observed) {
                     delay(dialogue.get("G2"));
                 }
-            } else {
+            } else if (userInput.equalsIgnoreCase("quit") || userInput.equalsIgnoreCase("options")) {
+                delay(getAltOptions(userInput));
+                halt(1);
+                delay(dialogue.get("G2"));
+            }
+            else {
                 delay(dialogue.get("E1"));
             }
         }

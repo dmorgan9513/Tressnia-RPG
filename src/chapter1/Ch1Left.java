@@ -6,14 +6,20 @@ import main.Main;
 
 import java.io.File;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Ch1Left extends Location {
     private final Map<String, String> dialogue = readDialogueFile(new File("src/chapter1/LeftDialogue.txt"));
 
     public void run() {
-        System.out.println(Main.center.getUsername());
-
-
+        delay(dialogue.get("G1"));
+        delay(dialogue.get("G2"));
+        Scanner input = new Scanner(System.in);
+        if(input.nextLine().equals("1")) {
+            delay(dialogue.get("W1"));
+        } else if(input.nextLine().equals("2")) {
+            delay(dialogue.get("W2"));
+        }
 
     }
 
