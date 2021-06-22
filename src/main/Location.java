@@ -2,13 +2,15 @@ package main;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.*;
 
 public abstract class Location implements Locationable{
 
     List<String> options = new ArrayList<>(Arrays.asList("Options", "Quit"));
 
-    public void delay (String s) {
+    public void delay(String s) {
         for (int i = 0; i < s.length(); i++) {
             if(s.charAt(i) == '@') {
                 System.out.println("");
@@ -23,6 +25,13 @@ public abstract class Location implements Locationable{
         }
     }
 
+//    public String format(String format) {
+//        String finalText = "";
+//        switch(format.contains(case)) {
+//            case "i": finalText =
+//        }
+//    }
+
     public void halt(int multiplier) {
         try {
             Thread.sleep(1000 * multiplier);
@@ -32,16 +41,25 @@ public abstract class Location implements Locationable{
     }
 
     public void next() {
+        Scanner scanner = new Scanner(System.in);
         String continuePrompt = "Press Enter to continue or type \"Options\" to see current options. ";
         delay(continuePrompt);
-        Scanner scanner = new Scanner(System.in);
         String input = scanner.nextLine();
         while(!input.equals("")) {
             if (input.equalsIgnoreCase("options") || input.equalsIgnoreCase("quit")) {
                 delay(getAltOptions(input));
-
             }
-            next();
+            delay(continuePrompt);
+            input = scanner.nextLine();
+        }
+    }
+
+    public static File setFilePath(String filepath) {
+        if(Files.exists(Paths.get(filepath))) {
+            return new File(filepath);
+        } else {
+            filepath = "resources/" + filepath;
+            return new File(filepath);
         }
     }
 
@@ -82,3 +100,5 @@ public abstract class Location implements Locationable{
         }
     }
 }
+
+//Make function to print and wait for input for combat --while(!input.nextLine) print .

@@ -1,0 +1,11 @@
+A1|Hello there - you've taken quite a fall. What's your name?@
+G1|@.....Chapter 1: Desolation.....@@
+G5|You can always respond to prompts with "Quit" to leave the game (all progress will be lost) or "Options" to see your current game options.@
+A2|AME: My name is Ameliora, but you can call me Ame.@
+A3|AME: Welcome to Tressnia.  This is an amazing place full of beauty and adventure, even if you can't tell right now.@I know this is all a little confusing, but as you progress, it will start to become clear, and I'll be here to help you find your way.@
+A4|@AME: You may have noticed a few circles of stones surrounding you.  These are your first challenges.@These challenges will test your mind and ability to solve puzzles.  Step into one of the circles to begin.@
+G2|@--What would you like to do? (type "observe" to look around or "ame" to talk with Ame)@
+G3|** You observe your surroundings. It's dark as if the sun has just set.  The air is cool with a light breeze.@In front of you is Ame and to each side and behind you are stones shaped together in perfect circles.@There's a feeling of emptiness as you look past them into the distance. You wonder how you got here. **@
+G4|@--What would you like to do? (type "left", "right", or "behind" to step into one of the circles)@
+E1|Invalid input - please type observe or ame.@
+A5|AME: I've already told you about Tressnia, have you so quickly forgotten?  You may want a moment to take this all in and observe your surroundings.@
