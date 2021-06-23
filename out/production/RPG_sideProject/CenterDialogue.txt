@@ -7,5 +7,5 @@ A4|@AME: You may have noticed a few circles of stones surrounding you.  These ar
 G2|@--What would you like to do? (type "observe" to look around or "ame" to talk with Ame)@
 G3|** You observe your surroundings. It's dark as if the sun has just set.  The air is cool with a light breeze.@In front of you is Ame and to each side and behind you are stones shaped together in perfect circles.@There's a feeling of emptiness as you look past them into the distance. You wonder how you got here. **@
 G4|@--What would you like to do? (type "left", "right", or "behind" to step into one of the circles)@
-E1|Invalid input - please type observe or ame.@
+E1|Invalid input - please type "observe" or "ame".@
 A5|AME: I've already told you about Tressnia, have you so quickly forgotten?  You may want a moment to take this all in and observe your surroundings.@

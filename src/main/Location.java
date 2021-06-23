@@ -18,7 +18,7 @@ public abstract class Location implements Locationable{
                 System.out.print(s.charAt(i));
             }
             try {
-                Thread.sleep(15);
+                Thread.sleep(10);
             } catch(InterruptedException ie) {
                 System.err.println("InterruptedException has occurred");
             }

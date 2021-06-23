@@ -41,7 +41,7 @@ public class Center extends Location implements Locationable {
         while(!talkedWithAmy || !observed) {
             String userInput = input.nextLine();
             if (userInput.equalsIgnoreCase("observe")) {
-                delay("\033[3m" + dialogue.get("G3") + "\033[0m");
+                delay(dialogue.get("G3"));
                 observed = true;
                 if(!talkedWithAmy) {
                     halt(3);
