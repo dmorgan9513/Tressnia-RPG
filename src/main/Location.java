@@ -25,13 +25,6 @@ public abstract class Location implements Locationable{
         }
     }
 
-//    public String format(String format) {
-//        String finalText = "";
-//        switch(format.contains(case)) {
-//            case "i": finalText =
-//        }
-//    }
-
     public void halt(int multiplier) {
         try {
             Thread.sleep(1000 * multiplier);
