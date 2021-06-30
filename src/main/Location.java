@@ -56,7 +56,7 @@ public abstract class Location implements Locationable{
         }
     }
 
-    public static Map<String, String> readDialogueFile(File filePath) {
+    public static Map<String, String> mapFile(File filePath) {
         Map<String, String> dialogueMap = new HashMap<>();
         try {
             Scanner fileReader = new Scanner(filePath);
@@ -66,7 +66,7 @@ public abstract class Location implements Locationable{
             }
             return dialogueMap;
         } catch(FileNotFoundException e) {
-            System.out.println("Dialogue file not found");
+            System.out.println("File not found");
             e.printStackTrace();
             System.exit(1);
         }

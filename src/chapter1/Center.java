@@ -13,7 +13,7 @@ public class Center extends Location implements Locationable {
     private boolean talkedWithAmy = false;
     private boolean observed = false;
     private Locationable nextLocation;
-    private final Map<String, String> dialogue = readDialogueFile(setFilePath("CenterDialogue.txt"));
+    private final Map<String, String> dialogue = mapFile(setFilePath("CenterDialogue.txt"));
 
     @Override
     public Locationable getLocation() {
