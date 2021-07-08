@@ -9,6 +9,7 @@ import java.util.*;
 public abstract class Location implements Locationable{
 
     List<String> options = new ArrayList<>(Arrays.asList("Options", "Quit"));
+    List<String> inventory;
 
     public void delay(String s) {
         for (int i = 0; i < s.length(); i++) {
@@ -39,10 +40,10 @@ public abstract class Location implements Locationable{
         delay(continuePrompt);
         String input = scanner.nextLine();
         while(!input.equals("")) {
-            //iterate through options map for if statement
-            if (input.equalsIgnoreCase("options") || input.equalsIgnoreCase("quit") ||
-                    input.equalsIgnoreCase("inventory")) {
-                delay(getAltOptions(input));
+            for(String option : options) {
+                if (input.equalsIgnoreCase(option)) {
+                    delay(getAltOptions(option));
+                }
             }
             delay(continuePrompt);
             input = scanner.nextLine();
@@ -76,15 +77,21 @@ public abstract class Location implements Locationable{
     }
 
     public String getAltOptions(String input) {
-        if(input.equalsIgnoreCase("quit")) {
+        if(input.equals("quit")) {
             System.out.println("Thanks for playing!");
             System.exit(1);
-        } else if(input.equalsIgnoreCase("options")) {
+        } else if(input.equals("options")) {
             String optionList = "";
             for(String option : options) {
                 optionList += option + " ";
             }
             return "Your current options are: " + optionList + "@";
+        } else if(input.equals("inventory")) {
+            String inventoryList = "";
+            for(String item : inventory) {
+                inventoryList += item + " ";
+            }
+            return "Your inventory contains: " + inventoryList + "@";
         }
         //create inventory and allow for items to be added
         return "Error: Invalid Input, type \"menu\" to try again";
@@ -93,7 +100,14 @@ public abstract class Location implements Locationable{
     public void addOption(String newOption) {
         if(!options.contains(newOption)) {
             options.add(newOption);
+            if(newOption.equals("inventory")) {
+                inventory = new ArrayList<>();
+            }
         }
+    }
+
+    public void addItem(String newItem) {
+        inventory.add(newItem);
     }
 }
 

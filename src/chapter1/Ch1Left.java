@@ -25,6 +25,7 @@ public class Ch1Left extends Location {
                 delay(dialogue.get("W2"));
                 readyToStart = true;
             }
+            //options not working right
         }
         next();
         int correctAnswers = 0;
@@ -33,7 +34,7 @@ public class Ch1Left extends Location {
         for(String singleAnagram : anagram) {
             anagramKeys.add(singleAnagram);
         }
-        while(correctAnswers < 3 && anagramKeys.get(0) != null) {
+        while(correctAnswers < 3 && !anagramKeys.isEmpty()) {
             Collections.shuffle(anagramKeys);
             String unsolvedAnagram = anagramKeys.get(0);
             int guesses = 0;
@@ -50,16 +51,22 @@ public class Ch1Left extends Location {
                     delay("Your guess was correct! You have successfully solved " + correctAnswers + " anagram(s)!\n\n");
                 } else {
                     guesses++;
-                    delay("Your guess was incorrect. You have " + (3 - guesses) + " remaining!");
+                    delay("Your guess was incorrect. You have " + (3 - guesses) + " remaining!\n");
+                    if(3 - guesses == 0) {
+                        delay("\nYou are out of guesses! The correct answer was " + anagrams.get(anagramKeys.get(0)) + ".\nYou'll now be given a new anagram to solve.\n");
+                        anagramKeys.remove(anagramKeys.get(0));
+                    }
                 }
             }
         }
-        if(anagramKeys.get(0) == null) {
+        if(anagramKeys.isEmpty()) {
             delay(dialogue.get("G3"));
             addOption("Inventory");
+            addItem("Badge of Knowledge");
         } else {
             delay(dialogue.get("G4"));
             addOption("Inventory");
+            addItem("Badge of Knowledge");
         }
 
     }
