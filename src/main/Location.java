@@ -18,7 +18,7 @@ public abstract class Location implements Locationable{
                 System.out.print(s.charAt(i));
             }
             try {
-                Thread.sleep(10);
+                Thread.sleep(0);
             } catch(InterruptedException ie) {
                 System.err.println("InterruptedException has occurred");
             }
@@ -27,7 +27,7 @@ public abstract class Location implements Locationable{
 
     public void halt(int multiplier) {
         try {
-            Thread.sleep(1000 * multiplier);
+            Thread.sleep(1 * multiplier);
         } catch(InterruptedException ie) {
             System.err.println("InterruptedException has occurred");
         }
@@ -39,7 +39,9 @@ public abstract class Location implements Locationable{
         delay(continuePrompt);
         String input = scanner.nextLine();
         while(!input.equals("")) {
-            if (input.equalsIgnoreCase("options") || input.equalsIgnoreCase("quit")) {
+            //iterate through options map for if statement
+            if (input.equalsIgnoreCase("options") || input.equalsIgnoreCase("quit") ||
+                    input.equalsIgnoreCase("inventory")) {
                 delay(getAltOptions(input));
             }
             delay(continuePrompt);
@@ -84,6 +86,7 @@ public abstract class Location implements Locationable{
             }
             return "Your current options are: " + optionList + "@";
         }
+        //create inventory and allow for items to be added
         return "Error: Invalid Input, type \"menu\" to try again";
     }
 
